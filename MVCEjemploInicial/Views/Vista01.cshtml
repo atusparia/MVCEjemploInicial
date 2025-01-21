@@ -1,0 +1,26 @@
+﻿@{
+    string nombre = "Ronald";
+    string apellido = "Cuevas";
+    int edad = 43;
+}
+
+@nombre
+<br />
+@apellido
+<br />
+@edad
+<br />
+
+@if (edad > 18)
+{
+    <h2>Es MAYOR de edad</h2>
+}
+else
+{
+    <h2>Es MENOR de edad</h2>
+}
+
+@for (int i = 0; i < 20; i++)
+{
+    <h2>@nombre</h2>
+}

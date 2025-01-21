@@ -15,5 +15,9 @@ namespace MVCEjemploInicial.Controllers
             return View();
         }
 
+        public ActionResult MiVista()
+        {
+            return View();
+        }
     }
 }

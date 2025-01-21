@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "MiVista";
+}
+
+<h2>MiVista</h2>
+
+
+@{
+    string nombre = "Ronald";
+    string apellido = "Cuevas";
+    int edad = 43;
+}
+
+<h1>Hola, @nombre</h1>
+
+
+
+@if (edad > 18)
+{
+    <h2>Es MAYOR de edad</h2>
+}
+else
+{
+    <h2>Es MENOR de edad</h2>
+}
+
+@for (int i = 1; i <= 15; i++)
+{
+    <h2>@i</h2><br />
+}
