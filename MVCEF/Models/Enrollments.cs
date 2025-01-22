@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MVCEF
+namespace MVCEF.Models
 {
     using System;
     using System.Collections.Generic;

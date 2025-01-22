@@ -7,28 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MVCEF
+namespace MVCEF.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Students
+    public partial class Grades
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Students()
+        public Grades()
         {
-            this.Enrollments = new HashSet<Enrollments>();
+            this.Students = new HashSet<Students>();
         }
     
-        public int StudentID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
         public int GradeID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public Nullable<bool> Enabled { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Enrollments> Enrollments { get; set; }
-        public virtual Grades Grades { get; set; }
+        public virtual ICollection<Students> Students { get; set; }
     }
 }

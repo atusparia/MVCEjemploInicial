@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MVCEF
+namespace MVCEntityFramework.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CourseStudentsEntities : DbContext
+    public partial class CourseStudentsEntities1 : DbContext
     {
-        public CourseStudentsEntities()
-            : base("name=CourseStudentsEntities")
+        public CourseStudentsEntities1()
+            : base("name=CourseStudentsEntities1")
         {
         }
     

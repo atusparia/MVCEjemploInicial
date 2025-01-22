@@ -6,22 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using MVCEF;
-using MVCEF.Models;
+using MVCEntityFramework.Models;
 
-namespace MVCEF.Controllers
+namespace MVCEntityFramework.Controllers
 {
     public class CoursesController : Controller
     {
-        private CourseStudentsEntities db = new CourseStudentsEntities();
+        private CourseStudentsEntities1 db = new CourseStudentsEntities1();
 
         // GET: Courses
         public ActionResult Index()
         {
-            var enabledCourses = db.Courses.Where(c => c.Enabled==true).ToList();
-            return View(enabledCourses);
-
-            //return View(db.Courses.ToList());
+            return View(db.Courses.ToList());
         }
 
         // GET: Courses/Details/5
@@ -50,7 +46,7 @@ namespace MVCEF.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseID,Name,Credit,Enabled")] Courses courses)
+        public ActionResult Create([Bind(Include = "CourseID,Name,Credit,Enabled,CampoX")] Courses courses)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +78,7 @@ namespace MVCEF.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseID,Name,Credit,Enabled")] Courses courses)
+        public ActionResult Edit([Bind(Include = "CourseID,Name,Credit,Enabled,CampoX")] Courses courses)
         {
             if (ModelState.IsValid)
             {
@@ -114,9 +110,7 @@ namespace MVCEF.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Courses courses = db.Courses.Find(id);
-            //db.Courses.Remove(courses);
-            courses.Enabled = false;
-            db.Entry(courses).State = EntityState.Modified;
+            db.Courses.Remove(courses);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
